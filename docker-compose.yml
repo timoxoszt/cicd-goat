@@ -12,8 +12,8 @@ services:
     container_name: jenkins-server
     restart: always
     ports:
-      - "8080:8080"
-      - "50000:50000"
+      - "127.0.0.1:8080:8080"
+      - "127.0.0.1:50000:50000"
   jenkins-agent:
     image: cidersecurity/goat-jenkins-agent:latest
     container_name: jenkins-agent
@@ -32,13 +32,13 @@ services:
     networks:
       - goat
     ports:
-      - "3000:3000"
+      - "127.0.0.1:3000:3000"
   ctfd:
     image: cidersecurity/goat-ctfd:latest
     container_name: ctfd
     restart: always
     ports:
-      - "8000:8000"
+      - "127.0.0.1:8000:8000"
     networks:
       - goat
   localstack:
@@ -55,8 +55,8 @@ services:
     networks:
       - goat
     ports:
-      - "8008:80"
-      - "2222:22"
+      - "127.0.0.1:8008:80"
+      - "127.0.0.1:2222:22"
   gitlab:
     image: cidersecurity/goat-gitlab:latest
     container_name: gitlab
@@ -79,8 +79,8 @@ services:
     networks:
       - goat
     ports:
-      - '4000:80'
-      - '5050:5050'
+      - '127.0.0.1:4000:80'
+      - '127.0.0.1:5050:5050'
     shm_size: '256m'
   gitlab-runner:
     image: cidersecurity/goat-gitlab-runner:latest
