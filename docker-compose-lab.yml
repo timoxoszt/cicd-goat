@@ -33,14 +33,6 @@ services:
       - goat
     ports:
       - "127.0.0.1:3000:3000"
-  ctfd:
-    image: cidersecurity/goat-ctfd:latest
-    container_name: ctfd
-    restart: always
-    ports:
-      - "127.0.0.1:8000:8000"
-    networks:
-      - goat
   localstack:
     image: localstack/localstack:0.14.1-amd64
     container_name: localstack

@@ -1,0 +1,15 @@
+version: "3.8"
+
+networks:
+  goat:
+    driver: bridge
+
+services:
+  ctfd:
+    image: cidersecurity/goat-ctfd:latest
+    container_name: ctfd
+    restart: always
+    ports:
+      - "127.0.0.1:8000:8000"
+    networks:
+      - goat
